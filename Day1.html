@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    html{
+        scroll-behavior: smooth;
+    }
+
+    th, td, tr, table{
+        border:solid black;
+        border-collapse: collapse;
+    }
+    nav{
+        border-radius: 10px;
+        width: 100%;
+        margin-top: -23px;
+        background-color: black;
+        text-align: center;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+        position: sticky;
+        top: 0;
+    }
+    button{
+        background-color: black;
+        border: none;
+        cursor: pointer;
+        border-radius: 10px;
+        width: 15%;
+    }
+    button:hover{
+        background-color: gray;
+        font-size:small;
+        transform: scale(1.9);
+    }
+    a{
+        text-decoration: none;
+        color: white;
+        transition: transform 0.5s;
+    }
+    a:hover{
+        transform: scale(100) ;
+        color: yellow
+    }    
+    
+</style>
+</head>
+<body>
+    <nav>
+        <button><a href="#home">Home</a></button> |
+        <button><a href="#menu">Menu</a></button> |
+        <button><a href="#contact">Contact</a></button>
+    </nav>
+    <div id="home">
+        <h1>HOME</h1>
+        <p>
+            Coffee is a beverage brewed from roasted, ground coffee beans. Darkly colored, bitter, and slightly acidic, coffee has a stimulating effect on humans, primarily due to its caffeine content, but decaffeinated coffee is also commercially available. There are also various coffee substitutes.
+        </p>
+        <img src="coffee.jpg" alt="coffee" width="700" height="400">
+    </div>
+    <div id="menu">
+        <h1>Menu</h1>
+<table border="1" style="border-collapse: collapse;">
+        <caption><strong>Hot Drinks</strong></caption>
+
+            <th>Item</th>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>Expresso</td>
+            <td>Single shot of rich espresso</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>Cappucina</td>
+            <td>Single shot of rich espresso</td>
+            <td>130</td>
+        </tr>
+        <tr>
+            <td>Lattle</td>
+            <td>Single shot of rich espresso</td>
+            <td>100</td>
+        </tr>
+    </table>
+    <br><br>
+    <table border="1" style="border-collapse: collapse;">
+        <caption>Cold Drinks & Bakery</caption>
+        <tr>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>Iced Americano</td>
+            <td>Expresso with over ice</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Cold Coffee</td>
+            <td>Smooth cold Coffee</td>  
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>Chocalate Muffin</td>
+            <td>Freshly Baked Daily</td>
+            <td>90</td>
+        </tr>
+    </table> 
+    </div>
+    <div id="contact">
+        <h1>Contact</h1>
+        <h3>Address:</h3>
+        <p>No. 14,<br>Green Street,<br>Anna Nagar West,<br>Chennai – 600040,<br> Tamil Nadu, India</p>
+        <h3>Phone Numbers:</h3>
+        <p>
+            📞 +91 98765 43210 (Customer Support)<br>
+            📞 044 – 2456 7890 (Landline)
+        </p>
+        <h3>Email IDs:</h3>
+        <p>
+            ✉️ support@brewhaven.com<br>
+            ✉️ info@brewhaven.com
+        </p>
+        <h3>Website:</h3>
+        <p>🌐 www.brewhaven.in</p>
+        <h3>Social Media:</h3>
+        <p>
+            Instagram: @brewhaven_coffee<br>
+            Facebook: facebook.com/brewhaven<br>
+            WhatsApp: +91 98765 43210
+        </p>
+        <h3>Business Hours:</h3>
+        <p>🕒 Monday–Sunday: 8:00 AM – 10:00 PM</p>
+    </div>
+</body>
+</html>

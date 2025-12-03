@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Marketplace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white text-gray-900">
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="border-b shadow-sm">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+            
+            <!-- Logo -->
+            <div class="text-2xl font-bold text-purple-700">
+                SkillHub
+            </div>
+
+            <!-- Search Bar -->
+            <div class="hidden md:block w-1/2">
+                <input type="text" placeholder="Search for anything..." 
+                       class="w-full border rounded-full px-4 py-2 focus:ring-2 focus:ring-purple-500">
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex items-center gap-4 text-sm font-medium">
+                <button class="hidden md:block px-4 py-2 border rounded hover:bg-gray-100">Login</button>
+                <button class="hidden md:block px-4 py-2 border rounded bg-gray-900 text-white hover:bg-gray-700">
+                    Sign Up
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Search -->
+        <div class="md:hidden px-4 pb-3">
+            <input type="text" placeholder="Search..." 
+                   class="w-full border rounded-full px-4 py-2">
+        </div>
+    </nav>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="bg-purple-700 text-white py-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <h1 class="text-4xl font-bold leading-tight">
+                Learn anything.
+                <br class="hidden md:block">
+                Anytime. Anywhere.
+            </h1>
+            <p class="mt-4 text-lg text-purple-200">
+                Build your skills with high-quality online courses taught by experts.
+            </p>
+
+            <div class="mt-6">
+                <button class="bg-white text-purple-700 px-6 py-3 rounded font-semibold hover:bg-gray-100">
+                    Browse Courses
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CATEGORY SECTION ================= -->
+    <section class="py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-2xl font-bold mb-6">Top Categories</h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="border p-6 rounded shadow hover:shadow-lg cursor-pointer text-center">
+                    Development
+                </div>
+                <div class="border p-6 rounded shadow hover:shadow-lg cursor-pointer text-center">
+                    Business
+                </div>
+                <div class="border p-6 rounded shadow hover:shadow-lg cursor-pointer text-center">
+                    Data Science
+                </div>
+                <div class="border p-6 rounded shadow hover:shadow-lg cursor-pointer text-center">
+                    IT & Software
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= COURSES SECTION ================= -->
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-2xl font-bold mb-6">Featured Courses</h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Course Card -->
+                <div class="bg-white rounded border hover:shadow-xl">
+                    <img src="media/web.jpg" class="rounded-t" />
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg">Complete Web Development</h3>
+                        <p class="text-sm text-gray-600 mt-1">John Doe</p>
+                        <p class="mt-2 font-bold">₹499</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded border hover:shadow-xl">
+                    <img src="media/python.jpg" class="rounded-t" />
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg">Python for Beginners</h3>
+                        <p class="text-sm text-gray-600 mt-1">Sarah Watson</p>
+                        <p class="mt-2 font-bold">₹699</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded border hover:shadow-xl">
+                    <img src="media/aiml.jpg" class="rounded-t" />
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg">AI & Machine Learning Bootcamp</h3>
+                        <p class="text-sm text-gray-600 mt-1">David Kim</p>
+                        <p class="mt-2 font-bold">₹999</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded border hover:shadow-xl">
+                    <img src="media/excel.jpg" class="rounded-t" />
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg">Master Excel & Power BI</h3>
+                        <p class="text-sm text-gray-600 mt-1">Anita Sharma</p>
+                        <p class="mt-2 font-bold">₹399</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-gray-900 text-gray-300 py-10">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
+
+            <div>
+                <h4 class="font-semibold mb-2">Udemy</h4>
+                <p class="text-sm">
+                    Learn new skills and boost your career.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-semibold mb-2">Categories</h4>
+                <ul class="text-sm space-y-1">
+                    <li>Development</li>
+                    <li>Business</li>
+                    <li>Data Science</li>
+                    <li>Design</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-semibold mb-2">About</h4>
+                <ul class="text-sm space-y-1">
+                    <li>Contact us</li>
+                    <li>Help Center</li>
+                    <li>Terms</li>
+                    <li>Privacy Policy</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-semibold mb-2">Follow Us</h4>
+                <ul class="text-sm space-y-1">
+                    <li>Instagram</li>
+                    <li>LinkedIn</li>
+                    <li>Facebook</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="text-center text-sm text-gray-500 mt-8">
+            © 2025 Udemy. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

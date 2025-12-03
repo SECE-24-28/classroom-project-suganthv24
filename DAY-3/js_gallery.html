@@ -45,32 +45,36 @@
             cursor: pointer;
             border-radius: 10px;
         }
-        #b1
-        {
-            font-size: 20px;
-            margin-top: 10px;
-            margin-left: 130px;
-            padding: 5px 15px;
-            cursor: pointer;
-            border-radius: 10px;
-        }
+
         div
         {
             margin-top: 10px;
             display: flex;
             gap: 180px;
         }
+        .image1, .image2
+        {
+            text-align: center;
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
     </style>
 </head>
 
 <body>
+    <div class="image1">
+    <h2>Image Toggle</h2>
     <img src="media/coffee.jpg" id="img1">
-    <br>
     <button onclick="toggle()" id="b1">Toggle</button>
-    <br><br>
+    </div>
 
+    <div class="image2">
+    <h2>Image Slider</h2>
     <img src="media/coffee.jpg" id="img2">
-    <br>
     <div>
     <button onclick="previous()">Previous</button>
     <button onclick="next()">Next</button>

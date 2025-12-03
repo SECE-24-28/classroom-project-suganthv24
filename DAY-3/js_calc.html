@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+        function add()
+        {
+            var n1 = parseInt(document.getElementById("n1").value);
+            var n2 = parseInt(document.getElementById("n2").value);
+            var sum = n1 + n2;
+            document.getElementById("result").value= sum;
+        }
+        function subtract()
+        {
+            var n1 = parseInt(document.getElementById("n1").value);
+            var n2 = parseInt(document.getElementById("n2").value);
+            var difference = n1 - n2;
+            document.getElementById("result").value = difference;
+        }
+        function multiply()
+        {
+            var n1 = parseInt(document.getElementById("n1").value);
+            var n2 = parseInt(document.getElementById("n2").value);
+            var product = n1 * n2;
+            document.getElementById("result").value = product;
+        }
+        function divide()
+        {
+            var n1 = parseInt(document.getElementById("n1").value);
+            var n2 = parseInt(document.getElementById("n2").value);
+            var quotient = n1 / n2;
+            document.getElementById("result").value = quotient;
+        }
+    </script>
+
+    <style>
+        table
+        {
+            align-items: center;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            background-image: linear-gradient();
+        }
+        p{
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        td, th
+        {
+            padding: 10px;
+            font-size: 26px;
+        }
+        input[type="number"]
+        {
+            font-size: 20px;
+            color: rgb(0, 0, 0);
+            height: 40px;
+            width: 250px;
+            border-radius: 10px;
+            padding: 5px;
+        }
+        button{
+            height: 60px;
+            width: 150px;
+            font-weight: bold;
+            font-size: 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            background-color: lightgray;
+
+        }
+        div{
+            margin-top: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .buttons{
+            text-align: center;
+        }
+        #result{
+            background-color: lightyellow;
+            color: darkgreen;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-r from-gray-200 to-neutral-400">
+    <div>
+    <p class="bg-gradient-to-r from-red-500 to-indigo-600 bg-clip-text text-transparent">Simple Calculator</p>
+    <table>
+        <tr>
+            <td><label for="n1">Number 1:</label></td>
+            <td><input type="number" placeholder="Enter your Number 1" id="n1"></td>
+        </tr>
+        <tr>
+            <td><label for="n2">Number 2:</label></td>
+            <td><input type="number" placeholder="Enter your Number 2" id="n2"></td>
+        </tr>
+        <tr>
+            <td><label for="result">Result:</label></td>
+            <td><input type="number" placeholder="Result" id="result"></td>
+        </tr>
+        <tr class="buttons">
+            <td><button onclick="add()">+</button></td>
+            <td><button onclick="subtract()">-</button></td>
+        </tr>
+        <tr class="buttons">
+            <td><button onclick="multiply()">x</button></td>
+            <td><button onclick="divide()">/</button></td>
+        </tr>
+    </table>
+    </div>
+</body>
+</html>

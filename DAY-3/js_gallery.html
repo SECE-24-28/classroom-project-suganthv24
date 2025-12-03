@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galleryt</title>
+    <script>
+        function toggle()
+        {
+            let img = document.getElementById("img1");
+            if(img.src.endsWith("coffee.jpg"))
+                img.src = "media/image-1.jpg";
+            else
+                img.src = "media/coffee.jpg";
+        }
+        function next()
+        {
+            let img = document.getElementById("img2");
+            if(img.src.endsWith("coffee.jpg"))
+                img.src = "media/image-1.jpg";
+            else
+                img.src = "media/coffee.jpg";
+        }
+        function previous()
+        {
+            let img = document.getElementById("img2");
+            if(img.src.endsWith("image-1.jpg"))
+                img.src = "media/coffee.jpg";
+            else
+                img.src = "media/image-1.jpg";
+        }
+    </script>
+    <style>
+        img
+        {
+            width: 360px;
+            height: 180px;
+            border: 2px solid black;
+        }
+        button
+        {
+            font-size: 20px;
+            margin-top: 10px;
+            padding: 5px 15px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        #b1
+        {
+            font-size: 20px;
+            margin-top: 10px;
+            margin-left: 130px;
+            padding: 5px 15px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        div
+        {
+            margin-top: 10px;
+            display: flex;
+            gap: 180px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="media/coffee.jpg" id="img1">
+    <br>
+    <button onclick="toggle()" id="b1">Toggle</button>
+    <br><br>
+
+    <img src="media/coffee.jpg" id="img2">
+    <br>
+    <div>
+    <button onclick="previous()">Previous</button>
+    <button onclick="next()">Next</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature Website</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* NAVBAR */
+        nav{
+            width: 100%;
+            padding: 15px 20px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            position: relative;
+            z-index: 10;
+        }
+
+        h1{
+            font-size: 30px;
+        }
+
+        ul{
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        a{
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 8px 13px;
+            transition: 0.3s ease-in-out;
+        }
+
+        a:hover{
+            color: rgb(113, 206, 234);
+            transform: scale(1.15);
+        }
+
+        /* BACKGROUND VIDEO */
+        main{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        video{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        /* CONTENT */
+        .content{
+            width: 100%;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        h2{
+            color: white;
+            font-size: 40px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        p{
+            color: white;
+            font-size: 18px;
+            width: 50%;
+            line-height: 1.5;
+            text-shadow: 1px 1px 3px black;
+        }
+
+        /* SOCIAL ICONS */
+        footer{
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+        }
+
+        ol{
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        img{
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            transition: 0.4s;
+        }
+
+        img:hover{
+            transform: scale(1.2) translateY(-5px);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px){
+            h2{ font-size: 28px; }
+            p{ width: 90%; font-size: 16px; }
+            ul{ gap: 10px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h1>NATURE</h1>
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">GALLERY</a></li>
+            <li><a href="#">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <video src="media/video-1.mp4" autoplay muted loop></video>
+
+        <div class="content">
+            <h2>WELCOME TO THE NATURE WEBSITE</h2>
+            <p>
+                Waterfalls are a natural wonder where water flows over a vertical drop, often created by erosion as softer
+                rock wears away, leaving a harder ledge. They are valued for their beauty and peaceful sounds, making them
+                popular tourist attractions. The world's highest is Angel Falls in Venezuela.
+            </p>
+        </div>
+
+        <footer>
+            <ol>
+                <li><img src="media/whatsapp.png" alt=""></li>
+                <li><img src="media/insta.jpg" alt=""></li>
+                <li><img src="media/X.png" alt=""></li>
+            </ol>
+        </footer>
+    </main>
+
+</body>
+</html>

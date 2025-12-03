@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* WARM SIMPLE BACKGROUND */
+        body{
+            background: #f3e9da; /* Soft warm cream */
+            color: #3b3b3b;
+        }
+
+        /* NAVBAR */
+        nav{
+            width: 100%;
+            padding: 15px 20px;
+            background: #704214; /* warm brown */
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        nav h1{
+            font-size: 30px;
+        }
+
+        nav ul{
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        nav a{
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 12px;
+            transition: 0.3s;
+        }
+
+        nav a:hover{
+            background: white;
+            color: #704214;
+            border-radius: 5px;
+        }
+
+        /* PROFILE SECTION */
+        main{
+            width: 100%;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .profile-box{
+            text-align: center;
+            width: 100%;
+        }
+
+        .profile-box img{
+            width: 190px;
+            height: 190px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 12px rgba(0,0,0,0.3);
+        }
+
+        .profile-box h3{
+            margin-top: 15px;
+            font-size: 28px;
+            color: #4a3b2b;
+        }
+
+        .profile-box p{
+            margin-top: 10px;
+            font-size: 18px;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+
+        /* EDUCATION */
+        .edu-section{
+            width: 95%;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 25px;
+            background: #fff8ef;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.15);
+        }
+
+        .edu-section h2{
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #704214;
+        }
+
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td{
+            border: 1px solid #c9b7a2;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th{
+            background: #ead8c0;
+            color: #4a3b2b;
+        }
+
+        tr{
+            background: #fffdfa;
+        }
+
+        /* TECH STACKS */
+        .tech-section{
+            width: 95%;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 25px;
+            background: #fff8ef;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.15);
+        }
+
+        .tech-section h2{
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #704214;
+        }
+
+        .tech-items{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .tech-badge{
+            padding: 10px 18px;
+            background: #ead8c0;
+            border-radius: 20px;
+            font-size: 16px;
+            color: #4a3b2b;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+
+        /* ACHIEVEMENTS */
+        .achievements{
+            width: 95%;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 25px;
+            background: #fff8ef;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.15);
+        }
+
+        .achievements h2{
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #704214;
+        }
+
+        .achieve-container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .achieve-box{
+            width: 260px;
+            background: #ead8c0;
+            padding: 20px;
+            border-radius: 12px;
+            color: #4a3b2b;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        .achieve-box h4{
+            margin-bottom: 8px;
+        }
+
+        /* PROJECTS */
+        .projects{
+            width: 100%;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .projects h2{
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #704214;
+        }
+
+        .project-container{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .project-box{
+            width: 250px;
+            background: #fff8ef;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.15);
+            transition: 0.3s;
+        }
+
+        .project-box:hover{
+            transform: scale(1.05);
+        }
+
+        /* CONTACT */
+        .contact{
+            width: 100%;
+            background: #704214;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .contact a{
+            color: #ffe9c7;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <h1>My Portfolio</h1>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#tech">Tech Stacks</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- PROFILE -->
+    <main id="about">
+        <div class="profile-box">
+            <img src="media/profile.jpg" alt="">
+            <h3>Suganth V</h3>
+            <p>
+                A passionate AI/ML Developer who builds intelligent systems using
+                Machine Learning, Deep Learning, NLP, and Web Development.
+            </p>
+        </div>
+    </main>
+
+    <!-- EDUCATION -->
+    <div class="edu-section" id="education">
+        <h2>Education</h2>
+        <table>
+            <tr>
+                <th>Course</th>
+                <th>Institution</th>
+                <th>Year</th>
+                <th>Percentage</th>
+            </tr>
+
+            <tr>
+                <td>B.E CSE</td>
+                <td>Sri Eshwar College of Engineering</td>
+                <td>2024–2028</td>
+                <td>82%</td>
+            </tr>
+
+            <tr>
+                <td>HSC</td>
+                <td>XYZ Matric Hr Sec School</td>
+                <td>2024</td>
+                <td>92.5%</td>
+            </tr>
+
+            <tr>
+                <td>SSLC</td>
+                <td>Holy Cross Matric Hr Sec School</td>
+                <td>2022</td>
+                <td>96.2%</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- TECH STACKS -->
+    <div class="tech-section" id="tech">
+        <h2>Tech Stacks Known</h2>
+
+        <div class="tech-items">
+            <div class="tech-badge">Python</div>
+            <div class="tech-badge">C / C++</div>
+            <div class="tech-badge">Java</div>
+            <div class="tech-badge">HTML & CSS</div>
+            <div class="tech-badge">JavaScript</div>
+            <div class="tech-badge">Machine Learning</div>
+            <div class="tech-badge">Deep Learning</div>
+            <div class="tech-badge">NLP</div>
+            <div class="tech-badge">LLMs</div>
+            <div class="tech-badge">React (Basic)</div>
+        </div>
+    </div>
+
+    <!-- ACHIEVEMENTS -->
+    <div class="achievements" id="achievements">
+        <h2>Achievements</h2>
+
+        <div class="achieve-container">
+
+            <div class="achieve-box">
+                <h4>🏆 Smart India Hackathon</h4>
+                <p>Developed an AI-powered fitness assistant with emotional intelligence.</p>
+            </div>
+
+            <div class="achieve-box">
+                <h4>🧑‍💻 ICPC</h4>
+                <p>Participated in Institution level ICPC Preliminaries.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="projects" id="projects">
+        <h2>My Projects</h2>
+
+        <div class="project-container">
+            <div class="project-box">
+                <h4>AI Fitness Agent</h4>
+                <p>Emotionally intelligent fitness companion.</p>
+            </div>
+
+            <div class="project-box">
+                <h4>Document Analyzer</h4>
+                <p>Advanced LLM-based contract analysis tool.</p>
+            </div>
+
+            <div class="project-box">
+                <h4>Athlete Verification System</h4>
+                <p>AI-based athlete authenticity detection.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="contact" id="contact">
+        <p>
+            Contact me at: 
+            <a href="mailto:suganth@gmail.com">suganth@gmail.com</a>
+        </p>
+    </div>
+
+</body>
+</html>

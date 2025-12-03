@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Responsive Login</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;font-family:Arial, sans-serif}
+
+    body{
+      background:#f2f2f2;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      padding:20px;
+    }
+
+    .card{
+      background:white;
+      display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+      width:140%;
+      max-width:400px;
+      padding:25px;
+      border-radius:8px;
+      box-shadow:0 4px 14px rgba(0,0,0,0.1);
+    }
+
+    h2{
+      text-align:center;
+      margin-bottom:20px;
+      font-size:20px;
+    }
+
+    label{
+      font-size:16px;
+      display:block;
+      margin-bottom:6px;
+    }
+
+    input[type="email"], input[type="password"]{
+      width:100%;
+      padding:10px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      margin-bottom:15px;
+      font-size:14px;
+    }
+
+    input:focus{
+      border-color:#4a90e2;
+      outline:none;
+    }
+
+    .btn{
+      width:100%;
+      padding:10px;
+      background:#4a90e2;
+      color:white;
+      border:none;
+      border-radius:5px;
+      font-size:16px;
+      cursor:pointer;
+    }
+
+    .btn:hover{background:#3b7ac7;}
+
+    .foot{
+      margin-top:12px;
+      text-align:center;
+      font-size:14px;
+    }
+
+    .foot a{
+      color:#4a90e2;
+      text-decoration:none;
+    }
+
+    @media(max-width:400px){
+      .card{padding:18px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <aside class="promo" aria-hidden="true">
+      <h1>Welcome back</h1>
+    </aside>
+
+    <main>
+      <section class="card" aria-labelledby="login-heading">
+        <div class="brand">
+          <h2 id="login-heading">Sign in</h2>
+        </div>
+
+        <form action="#" method="post" novalidate>
+          <!-- Email -->
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required autocomplete="email" />
+          </div>
+
+          <!-- Password -->
+          <div>
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" placeholder="••••••••" required autocomplete="current-password" />
+          </div>
+
+          <div class="row">
+            <label class="remember"><input type="checkbox" name="remember" /> Remember me</label>
+          </div>
+
+          <div>
+            <button type="submit" class="btn">Sign in</button>
+          </div>
+
+
+          <p class="foot">Don't have an account? <a href="#" style="color:inherit;text-decoration:underline">Sign up</a></p>
+        </form>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

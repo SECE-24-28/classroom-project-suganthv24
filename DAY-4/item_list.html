@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stationary Store</title>
+
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            transition: all 0.4s ease;
+        }
+
+        /* DARK MODE BODY */
+        body.dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: beige;
+            transition: all 0.4s ease;
+        }
+
+        /* INPUT IN DARK MODE */
+        body.dark-mode input {
+            background-color: #222;
+            color: white;
+            border: 1px solid #444;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: all 0.4s ease;
+        }
+
+        #addItemBtn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+
+        #removeItemBtn {
+            background-color: #f44336;
+            color: white;
+            border: none;
+        }
+
+        /* DARK MODE BUTTON STYLE */
+        body.dark-mode #addItemBtn { background-color: #2e7d32; }
+        body.dark-mode #removeItemBtn { background-color: #c62828; }
+
+        /* TOGGLE BUTTON */
+        #toggleBtn {
+            background-color: black;
+            color: white;
+            border: 1px solid black;
+            margin-bottom: 20px;
+        }
+        body.dark-mode #toggleBtn {
+            background-color: white;
+            color: black;
+            border: 1px solid white;
+        }
+
+        .output {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        ol {
+            text-align: left;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        li {
+            margin: 5px 0;
+            padding: 5px;
+            font-size: 20px;
+        }
+
+        .container {
+            border: 2px solid #000;
+            border-radius: 20px;
+            width: 70%;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        /* DARK MODE CONTAINER */
+        body.dark-mode .container {
+            background-color: #1e1e1e;
+            border-color: white;
+            box-shadow: none;
+        }
+
+        .inputs {
+            margin-top: 20px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .buttons {
+            margin-top: 20px;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="toggleBtn">Dark Mode</button>
+
+    <div class="container">
+        <h1>Stationary Store</h1>
+
+        <div class="inputs">
+            <input type="text" id="itemInput" placeholder="Enter item" />
+            <input type="number" id="qtyInput" placeholder="Qty" min="1" max="20" />
+        </div>
+
+        <div class="buttons">
+            <button id="addItemBtn">Add Item</button>
+            <button id="removeItemBtn">Remove Last Item</button>
+        </div>
+
+        <h2>Item List</h2>
+
+        <div class="output">
+            <ol id="itemList"></ol>
+        </div>
+    </div>
+
+    <script>
+        const addItemBtn = document.getElementById('addItemBtn');
+        const removeItemBtn = document.getElementById('removeItemBtn');
+        const itemInput = document.getElementById('itemInput');
+        const qtyInput = document.getElementById('qtyInput');
+        const itemList = document.getElementById('itemList');
+
+        const toggleBtn = document.getElementById('toggleBtn');
+
+        // DARK MODE TOGGLE
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            toggleBtn.textContent = document.body.classList.contains('dark-mode') ? "Light Mode" : "Dark Mode";
+        });
+
+        // ADD ITEM
+        addItemBtn.addEventListener('click', () => {
+            if (qtyInput.value === "") {
+                alert("Please enter quantity");
+                return;
+            }
+
+            const itemText = itemInput.value.trim();
+            const qty = qtyInput.value;
+
+            if (itemText !== "" && qty !== "") {
+                const li = document.createElement('li');
+                li.textContent = `${itemText} - Qty: ${qty}`;
+                itemList.appendChild(li);
+
+                itemInput.value = "";
+                qtyInput.value = "";
+            }
+        });
+
+        // REMOVE LAST
+        removeItemBtn.addEventListener('click', () => {
+            const lastItem = itemList.lastElementChild;
+            if (lastItem) {
+                itemList.removeChild(lastItem);
+            }
+        });
+    </script>
+</body>
+</html>

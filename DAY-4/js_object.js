@@ -65,3 +65,7 @@ var allLongerThanThree = student.courses.every(function(course) {
     return course.length > 3;
 });
 console.log("All Longer Than Three: " + allLongerThanThree);
+
+var courseString = student.courses.toString(); // converting array to string
+console.log("Courses as String: " + courseString);
+console.log("Number of Courses: " + student.courses.length); 

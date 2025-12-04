@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: beige;
+            margin: 10px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <form action="submit">
+    <h1 id="clock"></h1>
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" placeholder="Enter your name">
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" placeholder="Enter your email">
+
+    <button id="btn">Submit</button>
+    </form>
+
+    <script>
+        const emailInput = document.getElementById('email');
+        const nameInput = document.getElementById('name');
+        const btn = document.getElementById('btn');
+        const clock = document.getElementById('clock');
+        
+        function updateClock() {
+            clock.textContent = new Date().toLocaleTimeString();
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        btn.addEventListener('click', function(event) {
+            event.preventDefault(); 
+
+            const emailValue = emailInput.value;
+            const nameValue = nameInput.value;
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!nameValue) {
+                alert('Please enter your name.');
+                return;
+            }
+
+            if (!emailPattern.test(emailValue)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            alert('Form submitted successfully!');
+        });
+    </script>
+</body>
+</html>

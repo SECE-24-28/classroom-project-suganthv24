@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: Arial, sans-serif;
+            margin:0;
+            padding:0;
+        }
+        #fetchButton{
+            padding:10px 20px;
+            font-size:16px;
+            cursor:pointer;
+            background-color:#4CAF50;
+            color:white;
+            border:none;
+            border-radius:5px;
+        }
+        #clearButton{
+            padding:10px 20px;
+            font-size:16px;
+            cursor:pointer;
+            background-color:#f44336;
+            color:white;
+            border:none;
+            border-radius:5px;
+        }
+        #output{
+            margin-top:20px;
+        }
+        #container{
+            padding:20px;
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        #buttons{
+            display: flex;
+            gap: 10px;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+            text-align: left;
+        }
+        th{
+            background-color: #f2f2f2;
+        }
+        #searchBox {
+            padding: 8px;
+            width: 200px;
+            font-size: 16px;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+
+    <div id="buttons">
+    <button id="fetchButton">Fetch Data</button>
+    <button id="clearButton">Clear Data</button>
+    </div>
+
+    <input type="text" id="searchBox" placeholder="Search tasks by username...">
+    <table id="output"></table>
+    </div>
+    <script>
+        let button = document.getElementById("fetchButton");
+        let output = document.getElementById("output");
+        let searchBox = document.getElementById("searchBox");
+        let clearButton = document.getElementById("clearButton");
+
+        searchBox.addEventListener("input", ()=>{
+            let filter = searchBox.value.toLowerCase();
+            let rows = output.getElementsByTagName("tr");
+            for (let i = 1; i < rows.length; i++) {
+                let cells = rows[i].getElementsByTagName("td");
+                let match = false;
+                for (let j = 0; j < cells.length; j++) {
+                    if (cells[j]) {
+                        let cellText = cells[j].textContent || cells[j].innerText;
+                        if (cellText.toLowerCase().indexOf(filter) > -1) {
+                            match = true;
+                            break;
+                        }
+                    }
+                }
+                rows[i].style.display = match ? "" : "none";
+            }
+        });
+
+        clearButton.addEventListener("click", ()=>output.innerHTML = "");
+
+        button.addEventListener("click",async ()=>{
+            output.innerHTML = "Loading...";
+            let response=await fetch("https://jsonplaceholder.typicode.com/users");
+            let data=await response.json();
+            output.innerHTML="";
+
+            let tableHeader = `<tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>User Name</th>
+                                <th>Email</th>
+                               </tr>`;
+            output.innerHTML = tableHeader;
+
+            data.forEach(user => {
+                let li = document.createElement("tr");
+                li.innerHTML = `<td>${user.id}</td>
+                                <td>${user.name}</td>
+                                <td>${user.username}</td>
+                                <td>${user.email}</td>`;
+                output.appendChild(li);
+            });
+        })
+    </script>
+</body>
+</html>

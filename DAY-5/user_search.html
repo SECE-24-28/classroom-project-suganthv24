@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Search Users</title>
     <style>
         *{
             font-family: Arial, sans-serif;
@@ -54,7 +54,7 @@
         }
         #searchBox {
             padding: 8px;
-            width: 200px;
+            width: 226px;
             font-size: 16px;
             margin-top: 10px;
             border-radius: 10px;
@@ -82,22 +82,18 @@
             let filter = searchBox.value.toLowerCase();
             let rows = output.getElementsByTagName("tr");
             for (let i = 1; i < rows.length; i++) {
-                let cells = rows[i].getElementsByTagName("td");
-                let match = false;
-                for (let j = 0; j < cells.length; j++) {
-                    if (cells[j]) {
-                        let cellText = cells[j].textContent || cells[j].innerText;
-                        if (cellText.toLowerCase().indexOf(filter) > -1) {
-                            match = true;
-                            break;
-                        }
+                let username = rows[i].getElementsByTagName("td")[2];
+                if (username) {
+                    if (username.textContent.toLowerCase().indexOf(filter) > -1) {
+                        rows[i].style.display = "";
+                    } else {
+                        rows[i].style.display = "none";
                     }
                 }
-                rows[i].style.display = match ? "" : "none";
             }
         });
 
-        clearButton.addEventListener("click", ()=>output.innerHTML = "");
+        clearButton.addEventListener("click", ()=>{output.innerHTML = "", searchBox.value = ""});
 
         button.addEventListener("click",async ()=>{
             output.innerHTML = "Loading...";
@@ -107,9 +103,9 @@
 
             let tableHeader = `<tr>
                                 <th>ID</th>
-                                <th>Name</th>
-                                <th>User Name</th>
-                                <th>Email</th>
+                                <th>Name (>_<)</th>
+                                <th>User Name (~_~)</th>
+                                <th>Email (^人^)</th>
                                </tr>`;
             output.innerHTML = tableHeader;
 

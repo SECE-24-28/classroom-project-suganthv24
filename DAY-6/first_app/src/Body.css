@@ -1,0 +1,97 @@
+/* Form container with glassmorphism */
+.form-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem 3rem;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    color: #e0e0e0;
+}
+
+/* Table layout for form fields */
+.form-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 1rem;
+}
+
+.form-table td {
+    vertical-align: top;
+}
+
+.form-table label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+    color: #cfcfcf;
+}
+
+/* Input, select, textarea styling */
+.form-table input[type="text"],
+.form-table input[type="email"],
+.form-table input[type="date"],
+.form-table input[type="number"],
+.form-table input[type="tel"],
+.form-table select,
+.form-table textarea {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    font-size: 1rem;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.form-table input:focus,
+.form-table select:focus,
+.form-table textarea:focus {
+    outline: none;
+    border-color: #646cff;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Radio and checkbox alignment */
+.form-table input[type="radio"],
+.form-table input[type="checkbox"] {
+    margin-right: 0.4rem;
+    accent-color: #646cff;
+}
+
+/* Submit button */
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background: #646cff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.submit-btn:hover {
+    background: #535bf2;
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .form-container {
+        padding: 1.5rem 1rem;
+    }
+}
+
+.horizontal-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}

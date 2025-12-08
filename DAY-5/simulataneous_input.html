@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: Arial, sans-serif;
+            margin:0;
+            padding:0;
+        }
+        #input1, #input2 {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: beige;
+        }
+        #save {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="input1" placeholder="Input 1">
+    <input type="text" id="input2" placeholder="Input 2">
+    <button id="save">Save</button>
+    <button id="retrieve">Retrieve</button>
+    <ol id="result"></ol>
+    <script>
+        const input1 = document.getElementById('input1');
+        const input2 = document.getElementById('input2');
+        const saveButton = document.getElementById('save');
+        const retrieveButton = document.getElementById('retrieve');
+        const resultList = document.getElementById('result');
+
+        input1.addEventListener('input', () => {
+            input2.value = input1.value;
+        });
+        input2.addEventListener('input', () => {
+            input1.value = input2.value;
+        });
+
+        saveButton.addEventListener('click', () => {
+            localStorage.setItem('sharedInput', input1.value);
+            alert('Input saved: ' + input1.value);
+            input1.value = '';
+            input2.value = '';
+        });
+    </script>
+</body>
+</html>

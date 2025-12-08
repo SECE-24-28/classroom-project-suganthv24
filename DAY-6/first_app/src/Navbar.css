@@ -1,0 +1,39 @@
+/* Navbar */
+.navbar {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  position: fixed;   /* <‑‑ keep it at the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;     /* stay above other content */
+}
+
+button{
+  font-size: 1rem;
+  margin: 1rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #646cff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-items: center;
+}
+
+/* Links */
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+}
+
+button:hover {
+  background-color: #535bf2;
+}

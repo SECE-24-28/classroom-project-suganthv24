@@ -13,15 +13,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
+/* ---- Layout ---- */
 body {
   margin: 0;
   display: flex;
-  /* place-items: center;
-  min-width: 320px;
-  min-height: 100vh; */
+  flex-direction: column;      /* stack navbar + content */
+  align-items: center;         /* horizontally center everything */
+  justify-content: flex-start;/* start below the navbar */
+  min-height: 100vh;           /* full‑height page */
+  padding-top: 60px;           /* space for the fixed navbar (adjust if needed) */
 }
 
+/* Optional: give the main container a max‑width so it doesn’t stretch too far */
+#root {
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Existing heading style */
 h1 {
   font-size: 3.9em;
   line-height: 1.1;

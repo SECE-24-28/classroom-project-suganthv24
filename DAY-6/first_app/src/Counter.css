@@ -1,0 +1,48 @@
+#increment {
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #646cff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-items: center;
+  display: block;
+  margin: 0 auto;
+
+}
+#increment:hover {
+  background-color: #535bf2;
+}
+#decrement {
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #646cff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-items: center;
+  display: block;
+  margin: 0 auto;
+
+}
+#decrement:hover {
+  background-color: #535bf2;
+}
+
+div{
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem 3rem;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    color: #e0e0e0;
+}
+
+h1{
+    text-align: center;
+}

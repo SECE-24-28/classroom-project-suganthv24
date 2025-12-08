@@ -1,4 +1,4 @@
-/* Form container with glassmorphism */
+/* Body.css – styling for the registration form */
 .form-container {
     max-width: 800px;
     margin: 2rem auto;
@@ -10,7 +10,6 @@
     color: #e0e0e0;
 }
 
-/* Table layout for form fields */
 .form-table {
     width: 100%;
     border-collapse: separate;
@@ -28,7 +27,6 @@
     color: #cfcfcf;
 }
 
-/* Input, select, textarea styling */
 .form-table input[type="text"],
 .form-table input[type="email"],
 .form-table input[type="date"],
@@ -54,14 +52,12 @@
     background: rgba(255, 255, 255, 0.2);
 }
 
-/* Radio and checkbox alignment */
 .form-table input[type="radio"],
 .form-table input[type="checkbox"] {
     margin-right: 0.4rem;
     accent-color: #646cff;
 }
 
-/* Submit button */
 .submit-btn {
     display: block;
     width: 100%;
@@ -82,16 +78,15 @@
     transform: translateY(-2px);
 }
 
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    .form-container {
-        padding: 1.5rem 1rem;
-    }
-}
-
 .horizontal-group {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     align-items: center;
+}
+
+@media (max-width: 600px) {
+    .form-container {
+        padding: 1.5rem 1rem;
+    }
 }

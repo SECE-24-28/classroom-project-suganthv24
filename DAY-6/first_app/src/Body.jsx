@@ -3,8 +3,11 @@ import './Body.css';
 
 export default function Body() {
   return (
+    
     <div className="form-container">
-      <h3>User Registration Form</h3>
+      <header>
+      <h1>Student Application Form</h1>
+    </header>
 
       <table className="form-table">
         <tbody>

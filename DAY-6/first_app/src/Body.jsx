@@ -5,6 +5,7 @@ export default function Body() {
   return (
     
     <div className="form-container">
+      <form>
       <header>
       <h1>Student Application Form</h1>
     </header>
@@ -144,6 +145,7 @@ export default function Body() {
           </tr>
         </tbody>
       </table>
+      </form>
     </div>
   );
 }

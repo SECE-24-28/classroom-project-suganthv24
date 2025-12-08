@@ -9,9 +9,9 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<h2>Welcome Home 👋</h2>} />
+        <Route path="/" element={<h2><center>Welcome Home 👋</center></h2>} />
         <Route path="/counter" element={<Counter />} />
-        <Route path="/body" element={<Body />} />
+        <Route path="/form" element={<Body />} />
       </Routes>
     </Router>
   );

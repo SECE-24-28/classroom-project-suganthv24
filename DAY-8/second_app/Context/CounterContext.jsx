@@ -2,7 +2,7 @@ import React, { createContext, useState, useEffect } from "react";
 
 export const CounterContext = createContext();
 
-export const DataProvider = ({ children }) => {
+export const CounterProvider = ({ children }) => {
 
     const [count, setCount] = useState(0);
 

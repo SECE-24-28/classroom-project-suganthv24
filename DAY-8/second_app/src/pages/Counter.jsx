@@ -1,11 +1,9 @@
-import React, { useState } from "react";
-import "./Counter.css";
+import "../css/Counter.css";
 import { useContext } from "react";
-import { CounterContext } from "../Context/CounterContext";
+import { CounterContext } from "../../Context/CounterContext";
+
 export default function Counter() {
   const { count, increment, decrement, reset } = useContext(CounterContext);
-
-
   return (
     <div className="counter-container">
       <h1>Counter : {count}</h1>

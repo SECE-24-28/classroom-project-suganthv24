@@ -1,16 +1,21 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
-import { DataProvider } from '../Context/DataContext.jsx'
+import { StrictMode } from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 
-// import Counter from './Counter.jsx'
-// import { DataProvider } from '../Context/CounterContext.jsx'
+import App from "./App";
+import "./css/index.css";
 
-createRoot(document.getElementById('root')).render(
+import { DataProvider } from "../Context/DataContext";
+import { CounterProvider } from "../Context/CounterContext";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <DataProvider>
-      <App />
-    </DataProvider>
-  </StrictMode>,
-)
+    <BrowserRouter>
+      <DataProvider>
+        <CounterProvider>
+          <App />
+        </CounterProvider>
+      </DataProvider>
+    </BrowserRouter>
+  </StrictMode>
+);

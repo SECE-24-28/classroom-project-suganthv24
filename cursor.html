@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exact Snake Cursor</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #0b1020;
+      cursor: none;
+    }
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="canvas"></canvas>
+
+<script>
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+
+// Snake path (stores points)
+const points = [];
+const SNAKE_LENGTH = 80;
+const SPEED = 0.15;
+const RADIUS = 8;
+
+for (let i = 0; i < SNAKE_LENGTH; i++) {
+  points.push({ x: mouse.x, y: mouse.y });
+}
+
+window.addEventListener("mousemove", e => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+});
+
+function drawSnake() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Move head
+  points[0].x += (mouse.x - points[0].x) * SPEED;
+  points[0].y += (mouse.y - points[0].y) * SPEED;
+
+  // Body follows smoothly
+  for (let i = 1; i < points.length; i++) {
+    const dx = points[i - 1].x - points[i].x;
+    const dy = points[i - 1].y - points[i].y;
+
+    points[i].x += dx * 0.25;
+    points[i].y += dy * 0.25;
+  }
+
+  // Draw body
+  ctx.beginPath();
+  ctx.moveTo(points[0].x, points[0].y);
+
+  for (let i = 1; i < points.length; i++) {
+    ctx.lineTo(points[i].x, points[i].y);
+  }
+
+  ctx.strokeStyle = "#3cff6a";
+  ctx.lineWidth = RADIUS * 2;
+  ctx.lineCap = "round";
+  ctx.lineJoin = "round";
+  ctx.stroke();
+
+  // Draw head
+  ctx.beginPath();
+  ctx.arc(points[0].x, points[0].y, RADIUS * 1.4, 0, Math.PI * 2);
+  ctx.fillStyle = "#7dff90";
+  ctx.fill();
+
+  requestAnimationFrame(drawSnake);
+}
+
+drawSnake();
+
+// Resize support
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+</script>
+</body>
+</html>

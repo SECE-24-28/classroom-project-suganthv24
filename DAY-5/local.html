@@ -18,7 +18,7 @@
             border: 1px solid #ccc;
             background-color: beige;
         }
-        #save {
+        #save, #retrieve {
             padding: 10px 20px;
             margin: 10px;
             font-size: 16px;
@@ -28,6 +28,26 @@
             color: white;
             cursor: pointer;
         }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 20px 40px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            list-style-position: inside;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #result li {
+            font-size: 18px;
+            padding: 6px 0;
+        }
+
     </style>
 </head>
 <body>
@@ -49,12 +69,28 @@
         input2.addEventListener('input', () => {
             input1.value = input2.value;
         });
-
+        //store all the values in an array
+        let values = [];
         saveButton.addEventListener('click', () => {
-            localStorage.setItem('sharedInput', input1.value);
+            values.push(input1.value);
+            localStorage.setItem('sharedInput', values);
             alert('Input saved: ' + input1.value);
             input1.value = '';
             input2.value = '';
+        });
+        retrieveButton.addEventListener('click', () => {
+            resultList.innerHTML = ""; 
+
+            let storedValues = localStorage.getItem('sharedInput');
+            if (!storedValues) return;
+
+            storedValues = storedValues.split(','); 
+
+            storedValues.forEach((value) => {
+                const li = document.createElement('li');
+                li.textContent = value;
+                resultList.appendChild(li);
+            });
         });
     </script>
 </body>

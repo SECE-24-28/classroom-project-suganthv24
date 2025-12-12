@@ -10,7 +10,7 @@ export default function Feedbacks(){
             <SearchBox/>
         	{
                 searchResult.map((p)=>
-                <div id="post" key={p.id}>
+                <div id="post" key={p.id} >
                     <h3>{p.title}</h3>
                     <p>{p.body}</p>
                     <small>{p.datetime}</small>

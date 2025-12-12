@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import api from "../api/post";
+import { useNavigate } from "react-router-dom";
 
 export const FeedbackContext = createContext();
 
@@ -46,6 +47,7 @@ export const FeedbackProvider = ({ children }) => {
         setposts([...posts, res.data]);
         setTitle("");
         setBody("");
+        //redirect to '/'
     };
 
 

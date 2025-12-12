@@ -1,5 +1,8 @@
-#post{
-  border: 1px solid black;
+body{
+  background-color: rgb(162, 161, 151);
+}
+#post {
+  border: 1px solid #333;
   margin: 10px;
   border-radius: 10px;
   padding: 10px;
@@ -7,49 +10,56 @@
   margin-left: auto;
   margin-right: auto;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: #fafafa;
 }
 
 #search {
   display: block;
-  margin: 10px auto; 
+  margin: 10px auto;
   padding: 10px;
   border-radius: 5px;
   width: 30%;
+  border: 1px solid #333;
+  background-color: #ffffff;
 }
 
-.add-post{
-  border: 1px solid black;
+.add-post {
+  border: 1px solid #333;
   margin: 10px;
   border-radius: 10px;
   padding: 10px;
   max-width: 60%;
   margin-left: auto;
   margin-right: auto;
+  background-color: #fafafa;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
 }
-#add-post-form{
+
+#add-post-form {
   display: flex;
   flex-direction: column;
 }
-#title-input,#body-input{
+
+#title-input,
+#body-input {
   margin: 10px 0;
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid #333;
   font-size: 16px;
+  background-color: #ffffff;
 }
-#submit-btn{
+
+#submit-btn {
   padding: 10px;
   border-radius: 5px;
   border: none;
-  background-color: black;
+  background-color: #333;
   color: white;
 }
 
-
-#post:hover{
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+#post:hover {
+  box-shadow: 0 0 50px rgba(0,0,0,0.2);
   transform: scale(1.04);
 }
 
@@ -58,9 +68,11 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  background-color: black;
+  background-color: #111;
   color: white;
   border-radius: 0 0 10px 10px;
+  position: sticky;
+  top: 0;
 }
 
 nav h1 {
@@ -88,13 +100,27 @@ nav ul li a {
 
 nav ul li a:hover {
   background-color: white;
-  color: black;
+  color: #000;
   transform: scale(1.05);
 }
 
-a{
+a {
   text-decoration: none;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #111;
 }
 
+.delete-btn {
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: none;
+  background-color: #555;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-left: 750px;
+}
 
-
+.delete-btn:hover {
+  background-color: #000;
+}

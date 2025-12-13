@@ -1,12 +1,6 @@
 {
   "feedback": [
     {
-      "id": "1",
-      "title": "Morning Workout Review",
-      "body": "Completed the workout session with great energy. Need to improve my stamina.",
-      "datetime": "2025-12-12T06:50:00.000Z"
-    },
-    {
       "id": "2",
       "title": "UI Improvement Suggestion",
       "body": "The new dashboard looks clean, but the sidebar could be more compact.",
